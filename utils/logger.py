@@ -1,33 +1,26 @@
-"""Central logging setup for ShadowRecon.
-
-Creates output directories and configures console + file logging.
-"""
 import logging
+import sys
 import os
-from typing import Optional
 
+def setup_logger(debug: bool = False, log_file: str = None):
+    level = logging.DEBUG if debug else logging.INFO
 
-def setup_logging(level: str = "INFO", logfile: Optional[str] = None) -> None:
-    numeric = getattr(logging, level.upper(), logging.INFO)
-    base_output = os.path.join(os.path.dirname(os.path.dirname(__file__)), "output")
-    json_dir = os.path.join(base_output, "json")
-    html_dir = os.path.join(base_output, "html")
-    csv_dir = os.path.join(base_output, "csv")
-    log_dir = os.path.join(base_output, "logs")
+    # Create logs directory if it doesn't exist
+    if log_file:
+        log_dir = os.path.dirname(log_file)
+        if log_dir and not os.path.exists(log_dir):
+            os.makedirs(log_dir, exist_ok=True)
 
-    for d in (json_dir, html_dir, csv_dir, log_dir):
-        os.makedirs(d, exist_ok=True)
+    handlers = [logging.StreamHandler(sys.stdout)]
+    if log_file:
+        handlers.append(logging.FileHandler(log_file))
 
-    if logfile is None:
-        logfile = os.path.join(log_dir, "recon.log")
+    logging.basicConfig(
+        level=level,
+        format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+        handlers=handlers
+    )
 
-    logging.basicConfig(level=numeric, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
-
-    # Add a file handler in addition to the root handler
-    fh = logging.FileHandler(logfile)
-    fh.setLevel(numeric)
-    fh.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
-    logging.getLogger().addHandler(fh)
-
-
-__all__ = ["setup_logging"]
+def get_logger(name: str):
+    return logging.getLogger(name)
