@@ -22,7 +22,7 @@ def run(target: str) -> dict:
     result = {
         "module": "domains.whois",
         "target": target,
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "data": {
             "query": target,
             "type": "domain"
@@ -85,7 +85,7 @@ def run(target: str) -> dict:
                     "url": domain_info.url
                 }
             
-    except whois.parser.PywhoisError as e:
+    except Exception as e:
         result["data"]["status"] = "error"
         result["data"]["error"] = f"WHOIS error: {str(e)}"
     except Exception as e:

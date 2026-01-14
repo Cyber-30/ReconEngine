@@ -1,0 +1,85 @@
+2026-01-14 21:25:59 | INFO | orchestrator | Starting reconnaissance on target: example.com
+2026-01-14 21:25:59 | INFO | orchestrator | Output format: json
+2026-01-14 21:25:59 | INFO | orchestrator | ------------------------------------------------------------
+2026-01-14 21:25:59 | INFO | orchestrator | [*] Running passive reconnaissance...
+2026-01-14 21:25:59 | INFO | engine | Running passive module: WHOIS lookup
+2026-01-14 21:25:59 | ERROR | engine | Module not found: /home/sourya/Workspace/Projects/ReconEngine/modules/domains.whois.py
+2026-01-14 21:25:59 | WARNING | engine | No results from: WHOIS lookup
+2026-01-14 21:25:59 | INFO | engine | Running passive module: ASN enumeration
+2026-01-14 21:25:59 | ERROR | engine | Module not found: /home/sourya/Workspace/Projects/ReconEngine/modules/domains.asn.py
+2026-01-14 21:25:59 | WARNING | engine | No results from: ASN enumeration
+2026-01-14 21:25:59 | INFO | engine | Running passive module: CRT.sh enumeration
+2026-01-14 21:25:59 | ERROR | engine | Module not found: /home/sourya/Workspace/Projects/ReconEngine/modules/subdomains.crtsh.py
+2026-01-14 21:25:59 | WARNING | engine | No results from: CRT.sh enumeration
+2026-01-14 21:25:59 | INFO | engine | Running passive module: SecurityTrails
+2026-01-14 21:25:59 | ERROR | engine | Module not found: /home/sourya/Workspace/Projects/ReconEngine/modules/subdomains.securitytrails.py
+2026-01-14 21:25:59 | WARNING | engine | No results from: SecurityTrails
+2026-01-14 21:25:59 | INFO | engine | Running passive module: DNS records
+2026-01-14 21:25:59 | ERROR | engine | Module not found: /home/sourya/Workspace/Projects/ReconEngine/modules/dns.records.py
+2026-01-14 21:25:59 | WARNING | engine | No results from: DNS records
+2026-01-14 21:25:59 | INFO | engine | Running passive module: Wayback archives
+2026-01-14 21:25:59 | ERROR | engine | Module not found: /home/sourya/Workspace/Projects/ReconEngine/modules/web.wayback.py
+2026-01-14 21:25:59 | WARNING | engine | No results from: Wayback archives
+2026-01-14 21:25:59 | INFO | engine | Running passive module: URL discovery
+2026-01-14 21:25:59 | ERROR | engine | Module not found: /home/sourya/Workspace/Projects/ReconEngine/modules/web.urls.py
+2026-01-14 21:25:59 | WARNING | engine | No results from: URL discovery
+2026-01-14 21:25:59 | INFO | engine | Running passive module: Reverse WHOIS
+2026-01-14 21:25:59 | ERROR | engine | Module not found: /home/sourya/Workspace/Projects/ReconEngine/modules/domains.reverse_whois.py
+2026-01-14 21:25:59 | WARNING | engine | No results from: Reverse WHOIS
+2026-01-14 21:25:59 | INFO | orchestrator | ------------------------------------------------------------
+2026-01-14 21:25:59 | INFO | orchestrator | Completed 0 module(s)
+2026-01-14 21:25:59 | INFO | orchestrator | [*] Processing and correlating results...
+2026-01-14 21:25:59 | INFO | correlator | Correlation complete: 0 subdomains, 0 IPs, 0 ports found
+2026-01-14 21:25:59 | INFO | orchestrator | Results saved to: /home/sourya/Workspace/Projects/ReconEngine/output/example.com_recon.json
+2026-01-14 21:25:59 | INFO | orchestrator | Reconnaissance complete for: example.com
+2026-01-14 21:26:56 | INFO | orchestrator | Starting reconnaissance on target: example.com
+2026-01-14 21:26:56 | INFO | orchestrator | Output format: json
+2026-01-14 21:26:56 | INFO | orchestrator | ------------------------------------------------------------
+2026-01-14 21:26:56 | INFO | orchestrator | [*] Running passive reconnaissance...
+2026-01-14 21:26:56 | INFO | engine | Running passive module: WHOIS lookup
+2026-01-14 21:26:56 | WARNING | engine | /home/sourya/Workspace/Projects/ReconEngine/modules/domains/whois.py:25: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+Traceback (most recent call last):
+  File "/home/sourya/Workspace/Projects/ReconEngine/modules/domains/whois.py", line 35, in run
+    socket.inet_aton(target)
+OSError: illegal IP address string passed to inet_aton
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sourya/Workspace/Projects/ReconEngine/modules/domains/whois.py", line 43, in run
+    domain_info = whois.whois(target)
+                  ^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sourya/Workspace/Projects/ReconEngine/modules/domains/whois.py", line 102, in <module>
+    result = run(sys.argv[1])
+             ^^^^^^^^^^^^^^^^
+  File "/home/sourya/Workspace/Projects/ReconEngine/modules/domains/whois.py", line 88, in run
+    except whois.parser.PywhoisError as e:
+           ^^^^^^^^^^^^
+AttributeError: module 'whois' has no attribute 'parser'
+2026-01-14 21:26:56 | WARNING | engine | No results from: WHOIS lookup
+2026-01-14 21:26:56 | INFO | engine | Running passive module: ASN enumeration
+2026-01-14 21:26:58 | INFO | engine | Completed: ASN enumeration - 9 results
+2026-01-14 21:26:58 | INFO | engine | Running passive module: CRT.sh enumeration
+2026-01-14 21:27:00 | INFO | engine | Completed: CRT.sh enumeration - 6 results
+2026-01-14 21:27:00 | INFO | engine | Running passive module: SecurityTrails
+2026-01-14 21:27:00 | INFO | engine | Completed: SecurityTrails - 4 results
+2026-01-14 21:27:00 | INFO | engine | Running passive module: DNS records
+2026-01-14 21:27:01 | INFO | engine | Completed: DNS records - 7 results
+2026-01-14 21:27:01 | INFO | engine | Running passive module: Wayback archives
+2026-01-14 21:30:07 | INFO | engine | Completed: Wayback archives - 6 results
+2026-01-14 21:30:07 | INFO | engine | Running passive module: URL discovery
+2026-01-14 21:30:08 | INFO | engine | Completed: URL discovery - 4 results
+2026-01-14 21:30:08 | INFO | engine | Running passive module: Reverse WHOIS
+2026-01-14 21:30:08 | INFO | engine | Completed: Reverse WHOIS - 4 results
+2026-01-14 21:30:08 | INFO | orchestrator | ------------------------------------------------------------
+2026-01-14 21:30:08 | INFO | orchestrator | Completed 7 module(s)
+2026-01-14 21:30:08 | INFO | orchestrator | [*] Processing and correlating results...
+2026-01-14 21:30:08 | INFO | correlator | Correlation complete: 6 subdomains, 3 IPs, 0 ports found
+2026-01-14 21:30:08 | INFO | orchestrator | Results saved to: /home/sourya/Workspace/Projects/ReconEngine/output/example.com_recon.json
+2026-01-14 21:30:08 | INFO | orchestrator | Reconnaissance complete for: example.com

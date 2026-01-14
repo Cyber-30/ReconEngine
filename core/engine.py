@@ -79,14 +79,14 @@ class Engine:
         results = []
 
         passive_modules = [
-            ("domains.whois", "WHOIS lookup"),
-            ("domains.asn", "ASN enumeration"),
-            ("subdomains.crtsh", "CRT.sh enumeration"),
-            ("subdomains.securitytrails", "SecurityTrails"),
-            ("dns.records", "DNS records"),
-            ("web.wayback", "Wayback archives"),
-            ("web.urls", "URL discovery"),
-            ("domains.reverse_whois", "Reverse WHOIS"),
+            ("domains/whois", "WHOIS lookup"),
+            ("domains/asn", "ASN enumeration"),
+            ("subdomains/crtsh", "CRT.sh enumeration"),
+            ("subdomains/securitytrails", "SecurityTrails"),
+            ("dns/records", "DNS records"),
+            ("web/wayback", "Wayback archives"),
+            ("web/urls", "URL discovery"),
+            ("domains/reverse_whois", "Reverse WHOIS"),
         ]
 
         for module_name, desc in passive_modules:
@@ -107,12 +107,12 @@ class Engine:
         results = []
 
         active_modules = [
-            ("active.portscan", "Port scanning"),
-            ("infra.shodan", "Shodan reconnaissance"),
-            ("infra.censys", "Censys search"),
-            ("cloud.buckets", "Cloud bucket discovery"),
-            ("js.secrets", "JavaScript analysis"),
-            ("web.params", "Parameter discovery"),
+            ("active/portscan", "Port scanning"),
+            ("infra/shodan", "Shodan reconnaissance"),
+            ("infra/censys", "Censys search"),
+            ("cloud/buckets", "Cloud bucket discovery"),
+            ("js/secrets", "JavaScript analysis"),
+            ("web/params", "Parameter discovery"),
         ]
 
         for module_name, desc in active_modules:

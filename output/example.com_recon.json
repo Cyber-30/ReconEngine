@@ -1,0 +1,216 @@
+{
+  "target": "example.com",
+  "timestamp": "2026-01-14T16:00:08.254978",
+  "modules_run": [
+    "whois",
+    "asn",
+    "crtsh",
+    "securitytrails",
+    "dns",
+    "wayback",
+    "urls",
+    "reverse_whois"
+  ],
+  "results_count": 7,
+  "output_format": "json",
+  "data": {
+    "summary": {
+      "modules_executed": 7,
+      "modules_with_data": 7,
+      "target": "example.com"
+    },
+    "domains": {
+      "asn": {
+        "resolved_ip": "104.18.26.120",
+        "query_ip": "104.18.26.120",
+        "asn": "13335",
+        "prefix": "104.18.26.120",
+        "country": "104.18.16.0/20",
+        "registry": "US",
+        "allocated": "arin",
+        "bgpview_error": "<urlopen error [Errno -2] Name or service not known>",
+        "hostname": null
+      },
+      "dns": {
+        "a": [
+          "104.18.26.120",
+          "104.18.27.120"
+        ],
+        "aaaa": [
+          "2606:4700:91b2:8c7c:331b:5f1:ccc4:a209"
+        ],
+        "mx": [
+          {
+            "priority": 0,
+            "exchange": "."
+          }
+        ],
+        "ns": [
+          "elliott.ns.cloudflare.com.",
+          "hera.ns.cloudflare.com."
+        ],
+        "txt": [
+          "_k2n1y4vw3qtb4skdx9e7dxt97qrmmq9",
+          "v=spf1 -all"
+        ],
+        "soa": [
+          {
+            "ns": "elliott.ns.cloudflare.com.",
+            "email": "dns.cloudflare.com.",
+            "serial": 2393120882,
+            "refresh": 10000,
+            "retry": 2400,
+            "expire": 604800,
+            "minimum": 1800
+          }
+        ],
+        "resolution_success": true
+      },
+      "whois": {
+        "domains": [],
+        "search_type": "name",
+        "note": "Reverse WHOIS API key required. Consider using viewdns.info or whoisxmlapi.com",
+        "alternative": "Try searching manually at https://viewdns.info/reversewhois/"
+      }
+    },
+    "subdomains": [
+      "*.uat3.hosted.jivesoftware.com",
+      "www.example.com",
+      "www.example.org",
+      "*.example.com",
+      "as207960 test intermediate - example.com",
+      "*.hosted.jivesoftware.com"
+    ],
+    "ip_addresses": [
+      "104.18.26.120",
+      "104.18.27.120",
+      "2606:4700:91b2:8c7c:331b:5f1:ccc4:a209"
+    ],
+    "ports": [],
+    "technologies": [],
+    "vulnerabilities": [],
+    "endpoints": [],
+    "raw": {
+      "domains.asn": {
+        "timestamp": "2026-01-14T15:56:56.834274",
+        "data": {
+          "resolved_ip": "104.18.26.120",
+          "query_ip": "104.18.26.120",
+          "asn": "13335",
+          "prefix": "104.18.26.120",
+          "country": "104.18.16.0/20",
+          "registry": "US",
+          "allocated": "arin",
+          "bgpview_error": "<urlopen error [Errno -2] Name or service not known>",
+          "hostname": null
+        }
+      },
+      "subdomains.crtsh": {
+        "timestamp": "2026-01-14T15:56:58.772282",
+        "data": [
+          "*.example.com",
+          "*.hosted.jivesoftware.com",
+          "*.uat3.hosted.jivesoftware.com",
+          "as207960 test intermediate - example.com",
+          "www.example.com",
+          "www.example.org"
+        ]
+      },
+      "subdomains.securitytrails": {
+        "timestamp": "2026-01-14T15:57:00.718120",
+        "data": {
+          "subdomains": [],
+          "history": {},
+          "note": "SecurityTrails API key required. Set API key in config/api_keys.yaml",
+          "current_ip": "104.18.26.120"
+        }
+      },
+      "dns.records": {
+        "timestamp": "2026-01-14T15:57:00.913989",
+        "data": {
+          "a": [
+            "104.18.26.120",
+            "104.18.27.120"
+          ],
+          "aaaa": [
+            "2606:4700:91b2:8c7c:331b:5f1:ccc4:a209"
+          ],
+          "mx": [
+            {
+              "priority": 0,
+              "exchange": "."
+            }
+          ],
+          "ns": [
+            "elliott.ns.cloudflare.com.",
+            "hera.ns.cloudflare.com."
+          ],
+          "txt": [
+            "_k2n1y4vw3qtb4skdx9e7dxt97qrmmq9",
+            "v=spf1 -all"
+          ],
+          "soa": [
+            {
+              "ns": "elliott.ns.cloudflare.com.",
+              "email": "dns.cloudflare.com.",
+              "serial": 2393120882,
+              "refresh": 10000,
+              "retry": 2400,
+              "expire": 604800,
+              "minimum": 1800
+            }
+          ],
+          "resolution_success": true
+        }
+      },
+      "web.wayback": {
+        "timestamp": "2026-01-14T15:57:01.355711",
+        "data": {
+          "urls": [
+            "[\"com"
+          ],
+          "statistics": {},
+          "count": 1,
+          "total_discovered": 1,
+          "extensions": {},
+          "error": "HTTP error: 404"
+        }
+      },
+      "web.urls": {
+        "timestamp": "2026-01-14T16:00:07.603590",
+        "data": {
+          "urls": [
+            {
+              "url": "http://example.com",
+              "accessible": false
+            },
+            {
+              "url": "https://example.com",
+              "accessible": false
+            },
+            {
+              "url": "http://www.example.com",
+              "accessible": false
+            },
+            {
+              "url": "https://www.example.com",
+              "accessible": false
+            }
+          ],
+          "patterns": {},
+          "https_available": true,
+          "url_count": 4
+        }
+      },
+      "domains.reverse_whois": {
+        "timestamp": "2026-01-14T16:00:08.249597",
+        "data": {
+          "domains": [],
+          "search_type": "name",
+          "note": "Reverse WHOIS API key required. Consider using viewdns.info or whoisxmlapi.com",
+          "alternative": "Try searching manually at https://viewdns.info/reversewhois/"
+        }
+      }
+    }
+  }
+}
